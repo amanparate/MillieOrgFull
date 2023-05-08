@@ -1,0 +1,24 @@
+<apex:page standardController="Opportunity" extensions="OppRelativeVF_CX">
+    <apex:form >
+      <apex:pageBlock title="Opportunity">
+           <apex:pageMessages ></apex:pageMessages>
+           <apex:pageblockButtons >
+                   <apex:commandButton value="Update Record" action="{!updateRecord}"/>
+           </apex:pageblockButtons>
+           <apex:pageblockSection title="Opportunity Information">
+               <apex:outputPanel >
+                    Enter a Lead Source: <apex:inputField value="{!Opportunity.LeadSource}"/><br />
+                    Enter a Stage: <apex:inputField value="{!Opportunity.StageName}"/>                 
+                   <apex:commandButton value=" Show Records" action="{!showRecords}"/>               
+               </apex:outputPanel>
+               <apex:outputPanel >
+                  <apex:pageblockTable value="{!oppList}" var="opp">                      
+                          <apex:column value="{!opp.Account.Name}"/>
+                          <apex:column headerValue="LeadSource" > <apex:outputField value="{!opp.LeadSource}" /> </apex:column>
+                          <apex:column headerValue="Stage" > <apex:outputField value="{!opp.StageName}" /> </apex:column>                  
+            </apex:pageblockTable>
+            </apex:outputPanel>
+           </apex:pageblockSection>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

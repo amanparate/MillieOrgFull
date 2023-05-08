@@ -1,0 +1,13 @@
+<apex:page standardController="Account" extensions="AccountOutputAssignment_CX">
+  <apex:pageBlock title="Account" >
+      <apex:pageBlockSection title="Basic Information">
+      <apex:pageblockTable value="{!accList}" var="a">
+          <apex:column value="{!a.Name}"/>
+          <apex:column value="{!a.Type}"/>
+          <apex:column value="{!a.SLA__c}"/>
+      </apex:pageblockTable>
+      
+      </apex:pageBlockSection>
+  
+  </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,26 @@
+<apex:page standardController="Pilot__c" extensions="PilotAddressVF1_CX" >
+    <apex:form >
+        <apex:pageBlock title="Pilot">
+            <apex:pageblockSection title="Pilot Information">
+                <apex:pageblockTable value="{!pilotList}" var="pil">                    
+                    <apex:column headerValue="Pilot ID"> <apex:outputField value="{!pil.id}"/>  </apex:column>
+                    <apex:column headerValue="First Name"> <apex:outputField value="{!pil.First_Name__c}"/>  </apex:column>
+                    <apex:column headerValue="Last Name"> <apex:outputField value="{!pil.Last_Name__c}"/>  </apex:column>
+                    <apex:column headerValue="Gender"> <apex:outputField value="{!pil.Gender__c}"/>  </apex:column>
+                    <apex:column headerValue="Addresses">
+                        <apex:repeat value="{!pil.Addresses__r}" var="adr">
+                            <apex:outputField value="{!adr.Address_Line_1__c}"/><br/>
+                            <apex:outputField value="{!adr.Address_Line_2__c}"/>
+                            <apex:outputField value="{!adr.Pin_Code__c}"/>
+                            <apex:outputField value="{!adr.City__c }"/>                            
+                        </apex:repeat>
+                    </apex:column>
+                        <apex:column headerValue="View PDF">
+                          <apex:outputLink value="https://amillinium-dev-ed--c.visualforce.com/apex/PilotAddressPDF?Id={!pil.Id}" id="theLink"> View PDF </apex:outputLink>  
+                    </apex:column>
+
+                </apex:pageblockTable>
+            </apex:pageblockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

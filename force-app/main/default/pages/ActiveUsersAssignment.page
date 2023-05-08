@@ -1,0 +1,11 @@
+<apex:page standardController="User" recordSetVar="records" >
+    <apex:form >
+        <apex:pageBlock title="Users" >
+            <apex:pageBlockTable value="{!records}" var="record">
+                <apex:column headerValue="User Name" > <apex:outputField value="{!record.Name}" />    </apex:column>
+                <apex:column headerValue="Active Users"> <apex:outputField value="{!record.IsActive}" />   </apex:column>
+                <apex:column headerValue="Last Login"> <apex:outputField value="{!record.LastLoginDate}" />   </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

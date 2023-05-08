@@ -1,0 +1,7 @@
+<apex:page sidebar="false">
+    <img src="{!$Resource.salesforce}"/>
+    <apex:image url="https://www.salesforce.com/content/dam/web/en_us/www/images/pricing/overview/astro-eagle.gif" styleClass="imageStyle"/>
+    <img src="https://i.gifer.com/DlY7.gif" /> 
+                      
+
+</apex:page>

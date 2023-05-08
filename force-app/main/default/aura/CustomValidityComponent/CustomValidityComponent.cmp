@@ -1,0 +1,24 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    <aura:attribute name="objAccount" type="sObject" default="{'sObjectType' : 'Account'}" />    
+    
+    <lightning:card variant="Narrow" title="Account Information" iconName="standard:account">
+        <p class="slds-p-horizontal_small">
+			<lightning:input type="text" name="Account Name" label="Enter Account Name" value="{!v.objAccount.Name}" placeholder="Name" 
+                             aura:id="accNameId" required="true" onblur="{!c.checkAccountNameHandler}"/> <br />
+            <lightning:select aura:id="field" label="Type" name="type" required="true">
+                <option value="">-- None --</option>
+                <option value="Prospect">Prospect</option>
+                <option value="Customer - Direct">Customer - Direct</option>
+                <option value="Customer - Channel">Customer - Channel</option>
+                <option value="Channel Partner / Reseller">Channel Partner / Reseller</option>
+                <option value="Installation Partner">Installation Partner</option>
+                <option value="Technology Partner">Technology Partner</option>
+                <option value="Other">Other</option>
+            </lightning:select> <br />
+            
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <lightning:button variant="brand" label="Brand" title="Brand action" onclick="{! c.checkAccountNameHandler }" />
+            
+        </p>
+    </lightning:card>
+</aura:component>

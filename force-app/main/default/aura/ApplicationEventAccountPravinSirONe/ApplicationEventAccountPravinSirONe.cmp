@@ -1,0 +1,24 @@
+<aura:component controller="AccountProvider" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute name="type" type="List" default="Prospect,Customer - Direct,Customer - Channel,Channel Partner / Reseller,Installation Partner,Technology Partner,Other"/>
+ 	<aura:attribute name="selectedType" type="string" Default=""/>
+	<aura:attribute name="sliderValue" type="Integer" default="0"/> 
+ 		<!--Register Application Event-->
+ 		<aura:registerEvent name="accountTypeSend" type="c:ApplicationEventAccountPravinSirEvent"/>
+ 
+ 		<!--Account Type pickList Defined -->
+     <lightning:card footer="Card Footer" title="Hello" >
+         <lightning:layout class="slds-align_absolute-center">
+                <b> <lightning:select aura:id="selectType" name="selType" label="{!'Select Account Type :-'}" onchange="{!c.Component_A_Handler}"> 
+                     <option value="">choose one...</option>
+                     <aura:iteration items="{!v.type}" var="acctype">
+                     <option value="{!acctype}" label="{!acctype}"/>
+                 </aura:iteration>
+                 </lightning:select></b>
+         </lightning:layout>
+     
+     </lightning:card>
+ 
+<lightning:slider label="Volume" value="{!v.sliderValue}" onchange="{!c.Component_A_Handler}"/>
+    
+    {!v.sliderValue}
+</aura:component>

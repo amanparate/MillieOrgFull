@@ -1,0 +1,25 @@
+<template>
+    <lightning-card>
+
+        <lightning-record-edit-form
+        id="recordViewForm"
+        object-api-name="Account"
+    >
+        <lightning-messages></lightning-messages>
+        <!--Other fields here-->
+        <lightning-input-field field-name="Name"> </lightning-input-field>
+        <lightning-input-field field-name="Type"> </lightning-input-field>
+        <lightning-button
+            id="submit"
+            type="submit"
+            label="Update record"
+            class="slds-m-top_medium"
+        >
+        </lightning-button>
+    </lightning-record-edit-form>
+
+        <!-- <lightning-input-field label field-name="Name" aria-label="Account Name"> </lightning-input-field>
+        <lightning-input-field field-name="Phone" aria-label="Account Phone"> </lightning-input-field>
+        <lightning-button type="Submit" label="Create Account" onclick={handleClick} > </lightning-button> -->
+    </lightning-card>    
+</template>

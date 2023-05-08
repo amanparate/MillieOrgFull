@@ -1,0 +1,19 @@
+<apex:page standardController="Account" extensions="AccountContactRelationshipVF_CX" >
+    <apex:form >
+       <apex:pageblock title="Account">                
+                <apex:pageblockSection title="Account Information"> 
+                    <apex:outputPanel >                    
+                        Enter the Account Type: <apex:inputField value="{!Account.Type}"/><br /><p>
+                        </p>Enter the Account SLA : <apex:inputField value="{!Account.SLA__c}"/>                   
+                    </apex:outputPanel> 
+                    <apex:commandButton value="Update Record" action="{!updateRecord}"/>              
+                        <apex:pageblockTable value="{!accList}" var="acc">
+                                <apex:column value="{!acc.Name}"/>
+                                <apex:column value="{!acc.Type}"/>
+                                <apex:column value="{!acc.Industry}"/>
+                                <apex:column value="{!acc.SLA__c}"/>                                                                 
+                        </apex:pageblockTable>                
+                </apex:pageblockSection>        
+        </apex:pageblock> 
+    </apex:form>
+</apex:page>

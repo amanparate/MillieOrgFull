@@ -1,0 +1,18 @@
+<apex:page standardController="Account" extensions="JulyTest_CX" lightningStylesheets="true" sidebar="false">
+    <apex:form >
+        <apex:pageBlock title="Account">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Update Records" action="{!UpdateRecord}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Account Data">
+                <apex:pageblockTable value="{!accList}" var="objAccount" >
+                <apex:column value="{!objAccount.Id}"/>
+                    <apex:column headerValue="Account Name">    <apex:inputField value="{!objAccount.Name}"/>   </apex:column>
+                            <apex:column headerValue="Type">    <apex:inputField value="{!objAccount.Type}"/>   </apex:column>
+                            <apex:column headerValue="SLA">    <apex:inputField value="{!objAccount.SLA__c}"/>   </apex:column>
+                            
+                </apex:pageblockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

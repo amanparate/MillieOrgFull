@@ -1,0 +1,27 @@
+<apex:page standardController="Opportunity" extensions="OppAccountDisplay_CX">
+    <apex:form >
+         <apex:pageBlock title="Opportunity">
+         <apex:pageMessages ></apex:pageMessages>
+         <apex:pageblockButtons >
+                 <p> <apex:commandButton value="Update Record" action="{!updateRecord}"/> </p><br />
+         </apex:pageblockButtons>
+                 <apex:pageblockSection title="Opportunity Information">
+                 <apex:outputPanel >
+                         <h1>Enter a Lead Source: </h1><apex:inputField value="{!Opportunity.LeadSource}"/><br />
+                        <p><h1> Enter a Stage : </h1><apex:inputField value="{!Opportunity.StageName}"/> </p>
+                         <p> <apex:commandButton value="show Records" action="{!showRecords}"/> </p>
+                 </apex:outputPanel>
+                 <br /><br />
+                 <apex:outputPanel >
+                         <apex:pageblockTable value="{!oppList}" var="opp">
+                                 <apex:column value="{!opp.Type}"/> <apex:column value="{!opp.Account.Name}"/>
+                                 <apex:column value="{!opp.Name}"/>
+                                 <apex:column value="{!opp.AccountId}"/>                                  
+                                 <apex:column headerValue="Lead Source"><apex:inputField value="{!opp.LeadSource}"/></apex:column>
+                                 <apex:column headerValue="Stage Name"><apex:inputField value="{!opp.StageName}"/></apex:column> 
+                         </apex:pageblockTable>
+                 </apex:outputPanel>
+         </apex:pageblockSection>
+         </apex:pageBlock>
+     </apex:form>
+</apex:page>

@@ -1,0 +1,12 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    <aura:attribute name="parentRecievedData" type="String"  />
+    
+    <lightning:card title="Child">        
+        <p class="slds-p-horizontal_small">
+            Heyy.....I am from Child Component <br />
+            
+            Selected Value is : {!v.parentRecievedData}
+        </p>
+    </lightning:card>
+</aura:component>

@@ -1,0 +1,18 @@
+<apex:page standardController="Pilot__c" extensions="recordeditAssignment_CX">
+    <apex:form >
+         <apex:pageBlock title="Pilot" >
+             <apex:pageblockButtons >
+                 <apex:commandButton value="Update Record" action="{!UpdateRecord}"/>
+             </apex:pageblockButtons>
+                 <apex:pageblockSection title="Pilot General Information">
+                      <apex:pageBlockTable value="{!pilotList}" var="objPilot">
+                              <apex:column headerValue="ID">    <apex:inputField value="{!objPilot.id}"/>   </apex:column>
+                              <apex:column headerValue="First Name">    <apex:inputField value="{!objPilot.First_Name__c}"/>   </apex:column>
+                              <apex:column headerValue="Last Name">    <apex:inputField value="{!objPilot.Last_Name__c}"/>   </apex:column>
+                              <apex:column headerValue="Gender">    <apex:inputField value="{!objPilot.Gender__c }"/>   </apex:column>
+                              
+                      </apex:pageBlockTable>
+              </apex:pageblockSection>
+          </apex:pageBlock>
+     </apex:form>
+</apex:page>

@@ -1,0 +1,24 @@
+<apex:page standardController="Account" extensions="paginationAccount_CX">
+<apex:form >
+        <apex:pageblock title="Account">
+        
+                <apex:pageblockButtons >
+                        <apex:commandButton value="|<- First" action="{!firstMethod}" disabled="{!firstFlag}" />
+                        <apex:commandButton value="<< Previous" action="{!previousMethod}" disabled="{!previousFlag}"/>
+                        <apex:commandButton value="Next >>" action="{!nextMethod}" disabled="{!nextFlag}"/>
+                        <apex:commandButton value="Last ->|" action="{!lastMethod}" disabled="{!lastFlag}"/>
+                </apex:pageblockButtons>
+        
+           Page {!currentPage}  / Pages {!totalPages}
+        
+                <apex:pageblockSection title="Account Information">
+                        
+                        <apex:pageBlockTable value="{!accList}" var="acc">
+                                <apex:column value="{!acc.Name}"/>
+                                <apex:column value="{!acc.Type}"/>
+                        </apex:pageBlockTable>
+                        
+                </apex:pageblockSection>
+        </apex:pageblock>  
+ </apex:form>       
+</apex:page>

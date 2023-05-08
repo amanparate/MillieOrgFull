@@ -1,0 +1,19 @@
+<apex:page standardController="Opportunity" extensions="OppTestVF_CX">
+      <apex:pageBlock title="Opportinity">
+          <apex:pageBlockSection title="Opportunity Information ">
+                <apex:pageBlockTable value="{!oppList}" var="opp">
+                    <apex:column value="{!opp.id}"/>
+                    <apex:column value="{!opp.Name}"/>
+                    <apex:column value="{!opp.Amount}"/>
+                    <apex:column value="{!opp.CreatedDate}"/>
+                    <apex:column value="{!opp.Account.Name}"/>
+                    <apex:column value="{!opp.Account.Type}"/>
+                </apex:pageBlockTable>
+          
+          </apex:pageBlockSection>
+          
+      
+      </apex:pageBlock>
+  
+  
+</apex:page>

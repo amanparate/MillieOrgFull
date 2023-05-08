@@ -1,0 +1,23 @@
+<aura:component controller="AccountProvider" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<!--Registered Application Event Handle-->
+ 	<aura:handler event="c.ApplicationEventAccountPravinSirEvent" action="{!c.Component_B_Handler}"/> 
+ 
+	<!-- Required Attributes -->
+         <aura:attribute name="accList" type="List" />
+         <aura:attribute name="tableColumns" type="List" />
+         <aura:attribute name="receivedSliderValue" type="Integer" default="0"/>
+ 
+    <!-- Data Table Shows Account Record -->
+     <lightning:card footer="Card Footer" title="Component B" >
+     		Slider Value :- {!v.receivedSliderValue}
+         <lightning:layout class="slds-align_absolute-center">
+             <div style="height: 400px">
+                     <lightning:datatable
+                     keyField="id"
+                     data="{! v.accList }"
+                     columns="{! v.tableColumns }"
+                     hideCheckboxColumn="false" />
+             </div>
+         </lightning:layout>
+     </lightning:card>
+</aura:component>

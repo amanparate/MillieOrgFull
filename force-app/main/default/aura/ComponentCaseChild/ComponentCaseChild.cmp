@@ -1,0 +1,25 @@
+<aura:component controller="CaseProvider" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" > 
+ <aura:attribute name="objCase" type="sObject" default="{'sObjectType': 'case'}"/> 
+ <aura:registerEvent name="myCaseEvent" type="c:caseEvent" /> 
+ 
+  
+     <div class="slds-modal__container">
+         
+         <!-- Modal/Popup Box Header Starts here--> 
+         <header class="slds-modal__header"> 
+            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"> Case No.:{!v.objCase.CaseNumber} Provide Reason to Escalate Case</h2> 
+         </header> 
+         
+         <!--Modal/Popup Box Body Starts here--> 
+         <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1"> 
+            <lightning:textarea name="caseEscalatedReson" label="Enter Case Escalated Reson" value="{!v.objCase.Case_Escalated_Reason__c}" /> 
+         </div>
+         
+     	<!--Modal/Popup Box Footer Starts here--> 
+         <footer class="slds-modal__footer"> 
+             <lightning:button variant="neutral" label="Cancel" title="Cancel" onclick="{!c.closeModel }"/> 
+             <lightning:button variant="brand" label="Save" title="Save" onclick="{!c.saveCaseEscationReason}"/> 
+         </footer> 
+     </div> 
+ 
+</aura:component>

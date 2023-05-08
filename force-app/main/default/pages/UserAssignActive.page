@@ -1,0 +1,13 @@
+<apex:page standardController="User" extensions="UserAssignActive_CX">
+      <apex:form >
+         <apex:pageBlock title="Users" >
+             <apex:pageBlockTable value="{!userList}" var="record">
+                 <apex:column headerValue="ID" > <apex:outputField value="{!record.Id}" /> </apex:column>
+                 <apex:column headerValue="User Name" > <apex:outputField value="{!record.Name}" /> </apex:column>
+                 <apex:column headerValue="Profile"> <apex:outputField value="{!record.ProfileId}" /> </apex:column>
+                 <apex:column headerValue="Active"> <apex:outputField value="{!record.IsActive}" /> </apex:column>
+                 <apex:column headerValue="Login"> <apex:outputField value="{!record.LastLoginDate}" /> </apex:column>
+             </apex:pageBlockTable>
+         </apex:pageBlock>
+      </apex:form>
+</apex:page>

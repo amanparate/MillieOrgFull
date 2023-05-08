@@ -1,0 +1,16 @@
+<apex:page standardController="Contact" extensions="ContactOutputAssignment_CX" >
+  <apex:pageBlock title="Contacts">
+     <apex:pageBlockSection title="Contacts Basic Information">
+         <apex:pageblockTable value="{!conList}" var="c">
+             <apex:column value="{!c.FirstName}"/>
+             <apex:column value="{!c.Email}"/>
+             <apex:column value="{!c.Level__c}"/>
+             <apex:column value="{!c.LeadSource}"/>
+             <apex:column value="{!c.Name}"/>
+
+         </apex:pageblockTable>
+     
+     </apex:pageBlockSection>
+  
+  </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,9 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute name="clickedButton" type="String" />
+    <div class="slds-m-around_xx-large">
+        <p><b>You Clicked: {!v.clickedButton}</b></p>
+        <br/>
+        <lightning:button aura:id="button 1" name="btn1" label="Click Me" onclick="{!c.buttonClick}"/>
+        <lightning:button aura:id="button 2" name="btn2" label="Click Me" onclick="{!c.buttonClick}"/>
+    </div>
+</aura:component>

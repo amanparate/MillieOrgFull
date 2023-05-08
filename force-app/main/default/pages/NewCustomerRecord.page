@@ -1,0 +1,9 @@
+<apex:page standardController="Customer__c" lightningStylesheets="true">
+     <apex:form >
+       <apex:pageBlock title="Customer">
+         <apex:pageBlockSection title="Customer Basic Information">
+            <apex:inputField value="{!Customer__c.First_Name__c}"/>
+         </apex:pageBlockSection>
+       </apex:pageBlock>
+     </apex:form>
+</apex:page>

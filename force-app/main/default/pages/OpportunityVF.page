@@ -1,0 +1,32 @@
+<apex:page standardController="Opportunity" extensions="OpportunityVF_CX" >
+          <apex:form >
+             <apex:pageblock title="Opportunity">
+                 <apex:pageBlockButtons >
+                     <apex:commandButton value="Save" action="{!Save}"/>
+                     <apex:commandButton value="Save & New" action="{!SaveandNew}"/>
+                     <apex:commandButton value="Cancel" action="{!Cancel}"/>
+                 </apex:pageBlockButtons>
+                 <apex:pageBlockSection title="Opportunity Basic Information">
+                       <apex:InputField value="{!Opportunity.Name}"/>                                              
+                       <apex:InputField value="{!Opportunity.Amount}"/>                       
+                       <apex:InputField value="{!Opportunity.IsPrivate}"/>                       
+                       <apex:InputField value="{!Opportunity.AccountId}"/>                     
+                       <apex:InputField value="{!Opportunity.Type}"/>
+                       <apex:InputField value="{!Opportunity.LeadSource}"/>
+                       <apex:InputField value="{!Opportunity.NextStep}"/>
+                       <apex:InputField value="{!Opportunity.Email_ID__c}"/>                        
+                  </apex:pageblockSection>
+                  <apex:pageblockSection title="Additional Information">
+                       <apex:InputField value="{!Opportunity.OrderNumber__c}"/>
+                       <apex:InputField value="{!Opportunity.MainCompetitors__c}"/>                       
+                       <apex:InputField value="{!Opportunity.CurrentGenerators__c}"/>
+                       <apex:InputField value="{!Opportunity.DeliveryInstallationStatus__c}"/> 
+                       <apex:InputField value="{!Opportunity.TrackingNumber__c}"/>                       
+                  </apex:pageblockSection>  
+                  <apex:pageblockSection title="Description Information">
+                       <apex:inputTextarea value="{!Opportunity.Description}"/>
+                  </apex:pageblockSection>                     
+                    </apex:pageblock> ->            
+      </apex:form>
+
+</apex:page>

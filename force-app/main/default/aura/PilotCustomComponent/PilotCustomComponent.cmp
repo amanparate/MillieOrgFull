@@ -1,0 +1,15 @@
+<aura:component controller= "pilotCreateProvider" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="objPilot" type="sObject" default="{'sObjectType' :'Pilot__c'}"/>
+    
+    <lightning:input type="text" name="pilotFirstName" label="Enter Pilot First Name" value="{!v.objPilot.First_Name__c}"/><br/>    
+    <lightning:input type="text" name="pilotLastName" label="Enter Pilot Last Name" value="{!v.objPilot.Last_Name__c}"/><br/>     
+    <lightning:input type="text" name="pilotContactNumber" label="Enter Contact Number" value="{!v.objPilot.Contact_Number__c}"/><br/>     
+    <lightning:input type="text" name="pilotDOB" label="Enter Date of Birth" value="{!v.objPilot.DOB__c}"/><br/>    
+    <lightning:input type="text" name="pilotEmail" label="Enter Email ID" value="{!v.objPilot.Email_ID__c}"/><br/>        
+    <lightning:input type="text" name="pilotAadharCard" label="Enter Aadhar Card Details" value="{!v.objPoilot.Aadhar_Card_Number__c}"/><br/>     
+    <lightning:input type="text" name="pilotSalary" label="Enter Salary" value="{!v.objPilot.Salary__c}"/><br/>
+    
+    <lightning:button variant="brand" label="Create New Pilot Record" title="Pilot" onclick="{!c.JSController}" />
+ 
+</aura:component>

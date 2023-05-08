@@ -1,0 +1,36 @@
+<apex:page standardController="Pilot__c" Extensions="ActionFunctionOnPilot_CX" id="ppg" > 
+<script> 
+    function checkValue(){ 
+ 
+         var firstnam = document.getElementById('{!$Component.ppg.frm.ppb.ppbs.fname}').value; 
+         var lastnam = document.getElementById('{!$Component.ppg.frm.ppb.ppbs.lname}').value; 
+         var panno = document.getElementById('{!$Component.ppg.frm.ppb.ppbs.pan}').value; 
+ 
+         if(firstnam=='' || firstnam==null){ 
+             alert('First Name Should not be Empty');
+         } 
+         if(lastnam =='' || lastnam ==null){ 
+             alert('Last Name Should not be Empty'); 
+         } 
+         if(panno.length>10 || panno.length<10){ 
+             alert('Pan No. Must be in 10 digits'); 
+         } 
+         else{ 
+             SaveMe(); 
+         } 
+     } 
+</script> 
+    <apex:form id="frm"> 
+         <apex:pageBlock title="Pilot" id="ppb"> 
+             <apex:pageblockButtons > 
+                 <apex:commandButton value="Save" oncomplete="checkValue()" id="svb"/> 
+             </apex:pageblockButtons> 
+             <apex:pageBlockSection title="Pilot Information" id="ppbs"> 
+                 <apex:inputfield value="{!Pilot__c.First_Name__c}" id="fname"/> 
+                 <apex:inputfield value="{!Pilot__c.Last_Name__c}" id="lname"/> 
+                 <apex:inputfield value="{!Pilot__c.PAN_Card__c}" id="pan"/> 
+             </apex:pageBlockSection> 
+         </apex:pageBlock> 
+             <apex:actionFunction name="SaveMe" action="{!Save}"/> 
+    </apex:form> 
+</apex:page>

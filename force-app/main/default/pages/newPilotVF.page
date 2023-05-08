@@ -1,0 +1,31 @@
+<apex:page standardController="Pilot__c" extensions="newPilotVF_CX">
+  <apex:form >
+      <apex:pagemessages ></apex:pagemessages>
+      <apex:pageBlock title="Pilot">
+      <apex:pageblockButtons >
+      <apex:commandButton value="Save" action="{!Save}"/>
+      <apex:commandButton value="Save & New " action="{!SaveAndNew}"/>
+      <apex:commandButton value="Cancel" action="{!Cancel}"/>
+      <apex:commandButton value="Google Home Page" action="{!Google}"/>
+       </apex:pageblockButtons>
+          Contact Number :  <apex:inputField value="{!Pilot__c.Contact_Number__c}"/>
+          <br> DOB :  <apex:inputField value="{!Pilot__c.DOB__c}"/></br>
+          <br> Age :  <apex:inputField value="{!Pilot__c.Age_Calculated__c}"/></br>
+          <br> Email ID : <apex:inputField value="{!Pilot__c.Email_ID__c}"/></br>
+          <br> First Name : <apex:inputField value="{!Pilot__c.First_Name__c}"/></br>
+          <br> Last Name : <apex:inputField value="{!Pilot__c.Last_Name__c}"/></br>
+          <br> Gender : <apex:inputField value="{!Pilot__c.Gender__c}"/></br>
+          <br> Exprience :<apex:inputField value="{!Pilot__c.Experience__c}"/></br>
+          <br> Exprience Level :<apex:inputField value="{!Pilot__c.Experience_Level__c}"/></br>
+          <br> PAN Card :<apex:inputField value="{!Pilot__c.PAN_Card__c}"/></br>
+          <br> Pilot Photo :<apex:inputField value="{!Pilot__c.Pilot_Photo__c}"/></br>
+          <br> Verified Pilot :<apex:inputField value="{!Pilot__c.Verified_Pilot__c}"/></br>
+          <br> Hobbies: <apex:inputField value="{!Pilot__c.Hobbies__c}"/></br>
+          <br> Full name :<apex:inputField value="{!Pilot__c.Full_Name__c}"/></br>
+          <br> Annual Revenue :<apex:inputField value="{!Pilot__c.Annual_Revenue__c}"/></br>
+          <br> Tax :<apex:inputField value="{!Pilot__c.Tax__c}"/></br>
+          <br> Status :<apex:inputField value="{!Pilot__c.Status__c}"/></br>
+          <br> Licence Close Date :<apex:inputField value="{!Pilot__c.License_Close_Date__c}"/></br>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

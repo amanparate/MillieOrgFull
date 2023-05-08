@@ -1,0 +1,23 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<lightning:card title="Parent">        
+        <p class="slds-p-horizontal_small">
+            Heyy.....I am from Parent component
+            
+            
+            
+             <lightning:select name="{!v.accType}" value="value" aura:id="accType" label="Select Account Type" required="true" onchange="{!c.compoOneHandler}">
+                    <option value="">None</option>
+                    <option value="Prospect">Prospect</option>
+                    <option value="Customer - Direct">Customer - Direct</option>
+                    <option value="Customer - Channel">Customer - Channel</option>
+                    <option value="Channel Partner / Reseller">Channel Partner / Reseller</option>
+                    <option value="Installation Partner">Installation Partner</option>
+                    <option value="Technology Partner">Technology Partner</option>
+                    <option value="Other">Other</option>            		
+            </lightning:select>
+            
+            
+            <c:ComponentChild parentRecievedData = "{!c.value}"/>
+        </p>
+    </lightning:card>
+</aura:component>

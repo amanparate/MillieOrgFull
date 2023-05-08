@@ -1,0 +1,4 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="Fields" type ="Set" default="['AccountId','Amount','Name','Type','StageName','Probability','TrackingNumber__c','Description']" />
+    <lightning:recordForm objectApiName="Opportunity" fields = "{!v.Fields}" />
+</aura:component>

@@ -1,0 +1,10 @@
+<apex:page standardController="Opportunity" extensions="OppObjVF_CX">
+<apex:form >
+    <apex:pageBlock Title="Opportunity">
+        <apex:pageblockSection title="Opportunity Information">
+            
+            <apex:inputField value="{!Opportunity.Account}"/>
+        </apex:pageblockSection>
+    </apex:pageBlock>
+</apex:form>  
+</apex:page>

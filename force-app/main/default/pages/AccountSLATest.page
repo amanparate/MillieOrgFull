@@ -1,0 +1,8 @@
+<apex:page standardController="Account" extensions="AccountSLATest_CX" >
+  <apex:form >
+      <apex:pageBlock title="Account">
+          <apex:pageBlockSection title="Account Information">
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,11 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute name="pilId" type="Id" />
+    
+     <lightning:card title="Pilot">       		
+    
+            <iframe src="{! 'https://amillinium-dev-ed--c.visualforce.com/apex/PilotVFLightningPage?ID=' + v.pilId }" 
+            width="200%" height="1000px;" frameBorder="0"/>
+         
+    </lightning:card>
+
+</aura:component>

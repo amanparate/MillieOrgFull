@@ -1,0 +1,17 @@
+<apex:page controller="Pilot_CC">
+<apex:form >
+<apex:pagemessages ></apex:pagemessages>
+  <apex:pageBlock title="Pilot">
+      <apex:pageBlockButtons >
+          <apex:commandButton value="Save" action="{!SaveRecord}"/>
+      
+      </apex:pageBlockButtons>
+      <apex:pageblockSection title="Pilot Information">
+          <apex:outputPanel >
+                  First Name : <apex:inputText value="{!PilotFirstName}"/> <br/> <br/>
+                  Last Name : <apex:inputText value="{!PilotLastName}"/>
+          </apex:outputPanel>
+      </apex:pageblockSection>
+  </apex:pageBlock>
+</apex:form>
+</apex:page>

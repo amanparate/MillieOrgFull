@@ -1,0 +1,46 @@
+<apex:page standardController="Contact" >
+      <apex:form >
+             <apex:pageblock title="Contact Edit">
+                 <apex:pageBlockButtons >
+                     <apex:commandButton value="Save" action="{!Save}"/>
+                 </apex:pageBlockButtons>
+                 <apex:pageBlockSection title="Contact Information">
+                       <apex:InputField value="{!Contact.Name}"/>
+                       <apex:inputField value="{!Contact.Phone}"/>
+                       <apex:inputField value="{!Contact.AccountId}"/>
+                       <apex:inputField value="{!Contact.HomePhone}"/>
+                       <apex:inputField value="{!Contact.Title}"/>
+                       <apex:inputField value="{!Contact.MobilePhone}"/>
+                       <apex:inputField value="{!Contact.Department}"/>
+                       <apex:inputField value="{!Contact.OtherPhone}"/>
+                       <apex:inputField value="{!Contact.Birthdate}"/>
+                       <apex:inputField value="{!Contact.Fax}"/>                       
+                       <apex:inputField value="{!Contact.ReportsToId}"/>
+                       <apex:inputField value="{!Contact.Email}"/>
+                       <apex:inputField value="{!Contact.ReportsToId}"/>
+                       <apex:inputField value="{!Contact.AssistantPhone}"/>
+                       <apex:inputField value="{!Contact.LeadSource}"/>
+                   </apex:pageBlockSection> 
+                   <apex:pageblockSection title="Address Information">
+                        <apex:inputField value="{!Contact.MailingStreet}"/>
+                        <apex:inputField value="{!Contact.OtherStreet}"/>
+                        <apex:inputField value="{!Contact.MailingCity}"/>
+                        <apex:inputField value="{!Contact.OtherCity}"/>
+                        <apex:inputField value="{!Contact.MailingState}"/>
+                        <apex:inputField value="{!Contact.OtherState}"/>
+                        <apex:inputField value="{!Contact.MailingPostalCode}"/>
+                        <apex:inputField value="{!Contact.OtherPostalCode}"/>
+                        <apex:inputField value="{!Contact.MailingCountry}"/>
+                        <apex:inputField value="{!Contact.OtherCountry}"/>
+                   </apex:pageblockSection>
+                   <apex:pageBlockSection title="Additional Information">
+                       <apex:inputField value="{!Contact.Languages__c}"/>
+                       <apex:inputField value="{!Contact.Level__c}"/>
+                   </apex:pageBlockSection>
+                   <apex:pageBlockSection title="Description Information">
+                       <apex:inputfield value="{!Contact.Description}"/>
+                   </apex:pageBlockSection>
+                                             
+                    </apex:pageblock>             
+      </apex:form>
+</apex:page>

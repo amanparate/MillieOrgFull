@@ -1,0 +1,18 @@
+<apex:page standardController="Pilot__c" extensions="newCustomerPage_CX">
+      <apex:pageBlock title="Pilot">
+          <apex:pageBlockSection title="Pilot Basic Information ">
+                <apex:pageBlockTable value="{!pilotList}" var="p">
+                    <apex:column value="{!p.First_Name__c}"/>
+                    <apex:column value="{!p.Last_Name__c}"/>
+                    <apex:column value="{!p.DOB__c}"/>
+                    <apex:column value="{!p.Gender__c}"/>                    
+                    <apex:column value="{!p.CreatedDate}"/>
+                </apex:pageBlockTable>
+          
+          </apex:pageBlockSection>
+          
+      
+      </apex:pageBlock>
+  
+  
+</apex:page>

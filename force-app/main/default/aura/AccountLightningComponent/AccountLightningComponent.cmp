@@ -1,0 +1,43 @@
+<aura:component controller="AccountProvider" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    <aura:attribute name="accType" type="String" />
+    <aura:attribute name="accList" type="List" />
+    <aura:attribute name="accTablecolumns" type="List" />
+    <aura:attribute name="selectedAccID" type="ID" />
+    <aura:attribute name="contactList" type="List" />
+     <aura:attribute name="contactTablecolumns" type="List" />    
+    
+    
+     <lightning:select name="{!v.accType}" aura:id="accType" label="Select Account Type" required="true" onchange="{!c.selectedAccTypeHandler}">
+        <option value="">None</option>
+        <option value="Prospect">Prospect</option>
+        <option value="Customer - Direct">Customer - Direct</option>
+        <option value="Customer - Channel">Customer - Channel</option>
+        <option value="Channel Partner / Reseller">Channel Partner / Reseller</option>
+        <option value="Installation Partner">Installation Partner</option>
+        <option value="Technology Partner">Technology Partner</option>
+		<option value="Other">Other</option>
+    </lightning:select> <br />
+    
+    <lightning:badge label="Account Table"/>    
+   <!--Account Table -->
+   <lightning:datatable
+                keyField="id"
+                data="{! v.accList }"
+                columns="{! v.accTablecolumns }"
+                hideCheckboxColumn="false"  
+                onrowselection ="{!c.selectedAccountRows}"        
+                        /> <br />
+    
+    <lightning:badge label="Contact Table"/>    
+   <!--Contact Table -->
+   <lightning:datatable
+                keyField="id"
+                data="{! v.contactList }"
+                columns="{! v.contactTablecolumns }"
+                hideCheckboxColumn="false"                    
+                        />    
+    
+    
+    
+</aura:component>

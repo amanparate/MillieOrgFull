@@ -1,0 +1,22 @@
+<template>
+
+    <lightning-card>
+        <h3 slot="title">
+            <!-- <lightning-icon icon-name="utility:connected_apps" size="small"></lightning-icon> -->
+            <!-- <lightning-avatar src="https://www.lightningdesignsystem.com/assets/images/avatar2.jpg"></lightning-avatar> -->
+            POC of LWC to Fetch the data
+        </h3>
+    </lightning-card>
+
+    <lightning-card>
+        <div style="height: 300px;">
+            <lightning-datatable
+                    key-field="id"
+                    data={data}
+                    columns={columns}>
+            </lightning-datatable>
+        </div>
+
+    
+    </lightning-card>
+</template>

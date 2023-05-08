@@ -1,0 +1,29 @@
+<apex:page standardController="Account" extensions="accountContactTableCustom_CX">
+    <apex:form >
+        <apex:pageblock title="Account"> 
+        <apex:pageMessages ></apex:pageMessages>  
+                     <apex:pageblockButtons >
+                                 <p> <apex:commandButton value="Update Record" action="{!updateRecord}"/> </p><br />
+                     </apex:pageblockButtons>           
+                <apex:pageblockSection title="Account Information"> 
+                    <apex:outputPanel >
+                    Enter the Account Type: <apex:inputfield value="{!Account.Type}"/><br/>                             
+                    <apex:commandButton value="Show Records" action="{!showRecords}"/>           
+                    </apex:outputPanel>                                
+                        <apex:pageblockTable value="{!accList}" var="acc">
+                                <apex:column headerValue="Account ID" value="{!acc.Id}"/>
+                                <apex:column headerValue="Account Name" value="{!acc.Name}"/>
+                                <apex:column headerValue="Account Type" value="{!acc.Type}"/>
+                             
+                                <apex:column headerValue="Contacts">    
+                                      <apex:repeat value="{!acc.Contacts}" var="con">
+                                              <apex:inputField value="{!con.FirstName}"/>
+                                              <apex:inputField value="{!con.LastName}"/>
+                                              <apex:inputField value="{!con.LeadSource}"/>
+                                      </apex:repeat> 
+                              </apex:column>                                
+                        </apex:pageblockTable>                
+                </apex:pageblockSection>        
+        </apex:pageblock>
+   </apex:form> 
+</apex:page>

@@ -1,0 +1,17 @@
+<apex:page standardController="Account" extensions="CustomerAddressRecord">
+    <apex:form >
+        <apex:pageBlock title="Account">
+            <apex:pageblockSection title="Account Information">
+               
+                <apex:pageBlockTable value="{!accList}" var="acc">
+                    <apex:column headerValue="Account Name"> <apex:outputField value="{!acc.Name}"/> </apex:column>
+                    <apex:column headerValue="Type"> <apex:outputField value="{!acc.Type}"/> </apex:column> 
+                    <apex:column headerValue="View PDF">  
+                        <apex:outputLink value="https://amillinium-dev-ed--c.visualforce.com/apex/PDFpageforAccount?Id={!acc.Id}" id="theLink"> View PDF </apex:outputLink>
+                    </apex:column>
+
+                </apex:pageBlockTable>          
+            </apex:pageblockSection>        
+        </apex:pageBlock>    
+    </apex:form>
+</apex:page>

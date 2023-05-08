@@ -1,0 +1,19 @@
+<aura:component controller="AccountProvider" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	Second
+    
+    <aura:attribute name="accList" type="List" />
+    <aura:attribute name="accTablecolumns" type="List" />
+    <aura:handler event="c.ApplicationComponentAccountEvent" action="{!c.compoTwoHandler}"  />     
+    
+    
+    <lightning:card variant="Narrow" title="Accounts with your selected Type" iconName="standard:account">
+        <p class="slds-p-horizontal_small">    
+   			<!--Account Table -->               
+                    <lightning:datatable
+                            keyField="id"
+                            data="{! v.accList }"
+                            columns="{! v.accTablecolumns }"
+                            hideCheckboxColumn="false"/>                
+        </p>
+    </lightning:card>
+</aura:component>

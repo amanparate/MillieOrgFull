@@ -1,0 +1,17 @@
+<apex:page standardController="Contact" extensions="ContactAccountDisplayVF" renderAs="PDF">
+    <apex:pageBlock title="Contacts">
+        <apex:pageblockSection title="Contacts Basic Information">
+            <apex:pageBlockTable value="{!ConList}" var="con">
+                <apex:column headerValue="Name" > <apex:outputField value="{!con.Name}" /> </apex:column>
+                <apex:column headerValue="Account Name" > <apex:outputField value="{!con.AccountId}" /> </apex:column>
+                <apex:column headerValue="Department" > <apex:outputField value="{!con.Department}" /> </apex:column>
+                <apex:column headerValue="Email" > <apex:outputField value="{!con.Email}" /> </apex:column>
+                <apex:column headerValue="Contact Number" > <apex:outputField value="{!con.Phone}" /> </apex:column>
+                <apex:column headerValue="Birth Date" > <apex:outputField value="{!con.Birthdate}" /> </apex:column>           
+            </apex:pageBlockTable>
+        
+        </apex:pageblockSection>    
+    
+    </apex:pageBlock>
+      
+</apex:page>

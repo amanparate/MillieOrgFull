@@ -1,0 +1,33 @@
+<apex:page standardController="Account" extensions="AccConVFPageTest_CX" >
+<apex:form >
+    
+    <apex:pageMessages ></apex:pageMessages>
+            <apex:pageblock title="Account">
+                    <apex:pageblockSection title="Account Infomation">
+                           
+                            <apex:inputField value="{!Account.Type}">
+                                <apex:actionSupport event="onchange" action="{!displayData}"/>
+                            </apex:inputField>
+                            
+                            <br />
+                    
+                 <apex:outputPanel rendered="{!showFlag}">   
+                            <apex:pageblockTable value="{!accList}" var="acc">
+                                <apex:column value="{!acc.Name}"/>
+                                 <apex:column value="{!acc.Type}"/>
+                                  <apex:column value="{!acc.SLA__c}"/>
+                                   <apex:column headerValue="Contacts">    
+                                      <apex:repeat value="{!acc.Contacts}" var="con">
+                                          {!con.FirstName} &nbsp; {!con.LastName} <br />
+                                      </apex:repeat> 
+                              </apex:column>
+                              <apex:column headervalue="PDF" />
+
+                            </apex:pageblockTable>
+                 </apex:outputPanel>   
+                    
+                    </apex:pageblockSection>
+            </apex:pageblock>
+    </apex:form> 
+
+</apex:page>

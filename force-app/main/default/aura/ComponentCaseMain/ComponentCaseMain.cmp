@@ -1,0 +1,48 @@
+<aura:component controller="CaseProvider" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="objectCase" type="sObject" default="{'sObjectType' : 'Case'}" />
+    <aura:attribute name="disableEscalateButton" type="boolean" default="true" />
+    <aura:attribute name="showCaseEscationPopupBox" type="boolean" default="false" />
+    <aura:attribute name="caseButtonName" type="String" default="--None--"/>
+    <aura:attribute name="variantName" type="String" default="Neutral" />
+    
+    <!--Event Handler -->
+    <aura:handler name="caseEscalationCompoEvent" event="c:caseEscalationCompoEvent" action="{!c.receiveCaseEscalationCompDataHandler}" />
+    
+        <lightning:card title="Case Operations">
+			<lightning:input type="text" name="Case Number" label="Enter Case No" value="{!v.objectCase.CaseNumber}" /> <br />
+   		    <lightning:button variant="brand" label="Submit" title="Case" onclick="{!c.getCaseRecordsHandler}" />
+            <lightning:button variant="{!v.variantName}" label="{!v.caseButtonName}" title="Escalate" onclick="{! c.caseEscalationHandler }" disabled="{!v.disableEscalateButton}"/>
+   		
+    
+            
+           <table class="slds-table slds-table--bordered slds-table--striped">
+        <thead>
+            <tr>
+                <th scope="col"><span class="slds-truncate">Case Number</span></th>
+                <th scope="col"><span class="slds-truncate">Status</span></th>
+                 <th scope="col"><span class="slds-truncate">Reason</span></th>
+            </tr>
+        </thead>
+        <tbody>
+           
+                <tr>
+                    <td> {!v.objectCase.CaseNumber}</td>
+                    <td>  {!v.objectCase.Status}</td>
+                     <td>  {!v.objectCase.Reason}</td>
+                </tr>
+            
+        </tbody>
+    </table>
+
+            
+            <aura:if isTrue="{!v.showCaseEscationPopupBox}">
+            		<c:ComponentCaseChild objectCase="{!v.objectCase}"/>
+            </aura:if>
+            
+    
+    </lightning:card>
+       
+    
+    
+</aura:component>

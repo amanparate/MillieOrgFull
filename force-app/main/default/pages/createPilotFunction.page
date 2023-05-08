@@ -1,0 +1,33 @@
+<apex:page standardController="Pilot__c" extensions="createPilotFunction_CX" id="page">
+<script>
+        function checkval(){           
+         var fstname= document.getElementById('{!$Component.page.frmtg.pgblk.pgblksec.pilFstName}').value;         
+         var lstname= document.getElementById('{!$Component.page.frmtg.pgblk.pgblksec.pilLstname}').value;         
+         var pancard= document.getElementById('{!$Component.page.frmtg.pgblk.pgblksec.panCard}').value;         
+                 if(fstname=='' || fstname==null || lstname==' ' || lstname==null){
+                         alert('First name and Last Name should not be blank');
+                 }
+                    
+                 
+                 if(pancard.length>10 || pancard.length<10){
+                         alert('PAN card should be of 10 digits');
+                 }
+                 else{
+                     Save();
+                 }
+ }
+</script>
+    <apex:form id="frmtg">
+        <apex:pageBlock title="Pilot" id="pgblk">
+            <apex:pageblockButtons >
+                <apex:commandButton value="Save" oncomplete="checkval()"/>
+            </apex:pageblockButtons>
+                <apex:pageBlockSection title="Pilot Information" id="pgblksec">
+                    <apex:inputField value="{!Pilot__c.First_Name__c}" id="pilFstName"/><BR/><br/>
+                    <apex:inputField value="{!Pilot__c.Last_Name__c}" id="pilLstname"/><BR/><br/> 
+                    <apex:inputField value="{!Pilot__c.PAN_Card__c}" id="panCard"/>                
+                </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:actionFunction name="Save" action="{!Save}"/>
+    </apex:form>
+</apex:page>

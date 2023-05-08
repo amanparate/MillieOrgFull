@@ -1,0 +1,10 @@
+<apex:page standardController="Opportunity" extensions="OppVFtest_CX">
+  <apex:pageblock title="Opportunity">
+      <apex:pageblockSection title="Opporunity Information">
+          <apex:pageBlockTable value="{!oppList}" var="opp">
+              <apex:outputField value="{!opp.id}"/>
+              <apex:outputField value="{!opp.Name}"/>              
+          </apex:pageBlockTable>      
+      </apex:pageblockSection>
+  </apex:pageblock>
+</apex:page>

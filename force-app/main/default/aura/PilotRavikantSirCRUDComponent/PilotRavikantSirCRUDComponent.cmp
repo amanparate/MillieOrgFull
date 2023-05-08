@@ -1,0 +1,115 @@
+<aura:component controller ="PilotRavikantSirCRUDClass" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute name="objPilot" type="sObject" default="{'sObjectType':'Pilot__c'}"/> 
+ 
+         <aura:attribute name="createNewRecordFlag" type="Boolean" default="false"/> 
+         <aura:attribute name="searchFlag" type="Boolean" default="false"/> 
+         <aura:attribute name="recordFlag" type="Boolean" default="false"/> 
+         <aura:attribute name="HideFlag" type="Boolean" default="false"/> 
+         <aura:attribute name="myBool" type="Boolean" default="false"/> 
+         <aura:attribute name="SaveFlag" type="Boolean" default="false"/> 
+         <aura:attribute name="ShowRecordFlag" type="Boolean" default="false"/> 
+         <aura:attribute name="ShowFlag" type="Boolean" default="false"/> 
+ 
+ 		<lightning:layout > 
+ 			<lightning:layoutItem padding="around-small"> 
+                 <div class="header-column"> 
+                 <lightning:button variant="brand" label="Create New Record" title="Brand action" onclick="{! c.creatNewRecordHandler}" disabled="{!v.createNewRecordFlag}"/> 
+                 <lightning:button variant="brand" label="Search" title="Brand action" onclick="{!c.SearchHandler }" disabled="{!v.searchFlag}"/> 
+                 <lightning:button variant="brand" label="Update" title="Brand action" onclick="{!c.updateHandler}" /> 
+                 <lightning:button variant="destructive" label="Delete" title="Destructive action" onclick="{!c.deleteHandler }"/> 
+                 </div> 
+ 			</lightning:layoutItem> 
+ 		</lightning:layout> 
+ 
+         <aura:if isTrue="{!v.ShowRecordFlag}"> 
+         <lightning:layout > 
+         		<lightning:layoutItem padding="around-small"> 
+         		<div class="header-column"> 
+         <lightning:input type="Text" name="PilotId" label="Enter PilotID" value="{!v.objPilot.Name}"/> <br/> 
+ 
+ 		<aura:if isTrue="{!v.ShowFlag}"> 
+ 
+ Pilot Id : {!v.objPilot.Name} <br/> 
+ Pilot First Name :{!v.objPilot.First_Name__c} <br/> 
+ Pilot Last Name :{!v.objPilot.Last_Name__c} <br/> 
+ Pilot Gender :{!v.objPilot.Gender__c} <br/> 
+ Pilot Contact No.: {!v.objPilot.Contact_No__c} <br/> 
+ Pilot Experience : {!v.objPilot.Experience__c} <br/> 
+ Pilot Hobbies : {!v.objPilot.Hobbies__c} <br/>  Pilot DOB : {!v.objPilot.DOB__c} <br/> 
+ Pilot PAN Card : {!v.objPilot.PAN_Card__c} <br/> 
+ 
+ Pilot Status : {!v.objPilot.Status__c} <br/> 
+ <aura:set attribute="else"> 
+ .
+ </aura:set> 
+ </aura:if> 
+ 	</div> 
+ 	</lightning:layoutItem> 
+ 		<lightning:layoutItem padding="around-small"> 
+ 			<div class="header-column"> 
+ 				<lightning:icon iconName="action:preview" alternativeText="preview" title="Preview" value="{!v.objPilot.Name}" onclick="{!c.SearchMethodHandler}"/> <br/> 
+ 			</div> 
+ 		</lightning:layoutItem> <br/> 
+ 	</lightning:layout> 
+ <aura:set attribute="else"> 
+ . 
+ </aura:set> 
+ </aura:if> 
+ 
+ 
+ <aura:if isTrue="{!v.recordFlag}"> 
+ 		<lightning:layout > 
+ 				<lightning:layoutItem padding="around-small"> 
+ 				<div class="header-column"> 
+ 				<lightning:input type="Text" name="FirstName" label="Enter First Name" value="{!v.objPilot.First_Name__c}"/> <br/> 
+ <lightning:input type="Text" name="LastName" label="Enter Last Name" value="{!v.objPilot.Last_Name__c}"/> <br/> 
+ <lightning:select name="Gender" label="Select Gender" value="{!v.objPilot.Gender__c}"> 
+         <option value="Male">Male</option> 
+         <option value="Female">Female</option> 
+         <option value="Known">Known</option> 
+         <option value="Unknown">Unknown</option> 
+ </lightning:select> <br/> 
+     <lightning:input type="Date" name="DOB" label="Select DOB" value="{!v.objPilot.DOB__c}"/> <br/> 
+     <lightning:input type="Text" name="Email" label="Enter Email Id" value="{!v.objPilot.Email_ID__c}"/> <br/> 
+     <ui:inputCheckbox aura:id="checkbox" label="Police Verification " value="{!v.objPilot.Verified_Pilot__c}"/> <br/> 
+ </div> 
+ </lightning:layoutItem> 
+ <lightning:layoutItem padding="around-small"> 
+ <div class="header-column">  <lightning:select name="Hobbies" label="Select Hobbies" value="{!v.objPilot.Hobbies__c}" 
+> 
+ <option value="Cricket">Cricket</option> 
+ <option value="Chess">Chess</option> 
+ <option value="Drawing">Drawing</option> 
+ <option value="HallyBall">HallyBall</option> 
+ <option value="Reading">Reading</option> 
+ <option value="Singing">Singing</option> 
+ </lightning:select> <br/> 
+ <lightning:select name="Experience" label="Select Experience" 
+value="{!v.objPilot.Experience__c}"> 
+ <option value="">--None--</option> 
+ <option value="Less than 2 Years">Less than 2 Years</option> 
+ <option value="In Between 2 To 5 Years">In Between 2 To 5 Years</option> 
+ <option value="More Than 5 Years">More Than 5 Years</option> 
+ </lightning:select><br/> 
+ <lightning:input type="Text" name="ContactNo" label="Enter Contact No." 
+value="{!v.objPilot.Contact_No__c}"/> <br/> 
+ <lightning:input type="Text" name="PanCard" label="Enter Pan Card" 
+value="{!v.objPilot.PAN_Card__c}"/> <br/> 
+ <lightning:select name="Status" label="Enter " value="{!v.objPilot.Status__c}"> 
+ <option value="">--None--</option> 
+ <option value="New">New</option> 
+ <option value="Pending">Pending</option> 
+ <option value="Completed">Completed</option> 
+ </lightning:select> <br/> 
+ </div> 
+ </lightning:layoutItem> 
+ </lightning:layout> 
+ <lightning:button variant="brand" label="Save" title="Brand action" onclick="{! c.saveHandler }" 
+/> 
+ <lightning:button variant="brand" label="Hide" title="Brand action" onclick="{! c.HideHandler }" 
+/> 
+ <aura:set attribute="else"> 
+ . 
+ </aura:set> 
+ </aura:if>
+</aura:component>

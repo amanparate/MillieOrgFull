@@ -1,0 +1,13 @@
+<apex:page standardController="Account" extensions="PDFpageforAccount" renderAs="PDF">
+    <apex:pageBlock title="Account">
+        <apex:pageBlockSection title="Information">
+                <apex:outputField value="{!objAcc.Name}"/>
+                <apex:outputField value="{!objAcc.AccountNumber}"/>
+                <apex:outputField value="{!objAcc.Type}"/>
+                <apex:outputField value="{!objAcc.Industry}"/>
+                
+        </apex:pageBlockSection>
+    
+    </apex:pageBlock>
+  
+</apex:page>

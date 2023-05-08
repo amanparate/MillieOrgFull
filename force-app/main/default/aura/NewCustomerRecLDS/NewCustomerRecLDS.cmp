@@ -1,0 +1,5 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<Aura:attribute name="field" type="string[]" default="['First_Name__c' ,'Age__c','Gender__c']"/>
+ 
+	<lightning:recordForm objectApiName="Pilot__c" fields="{!v.field}"/>
+</aura:component>

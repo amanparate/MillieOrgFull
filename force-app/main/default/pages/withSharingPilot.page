@@ -1,0 +1,33 @@
+<apex:page standardController="Pilot__c" Extensions="withSharingPilot_CX">
+<apex:form > 
+     <apex:pageblock title="Pilot"> 
+         <apex:pageblockbuttons >
+                 <apex:commandButton value="|<- First" action="{!firstMethod}" disabled="{!firstFlag}" />
+                 <apex:commandButton value="<< Previous" action="{!previousMethod}" disabled="{!previousFlag}"/>
+                 <apex:commandButton value="Next >>" action="{!nextMethod}" disabled="{!nextFlag}"/>
+                 <apex:commandButton value="Last ->|" action="{!lastMethod}" disabled="{!lastFlag}"/>         
+         </apex:pageblockbuttons>
+                 Page {!currentPage}  / Pages {!totalPages}
+             <apex:outputPanel > 
+                     User Name : {!UserName} <br/> <br/> 
+                     User Profile : {!profileName} <br/> <br/> 
+                     Total Records = {!count} 
+             </apex:outputPanel> <br/> <br/> 
+             <apex:pageBlockSection title="Pilot Information"> 
+                         <apex:pageBlockTable value="{!pilotList}" var="p"> 
+                                     <apex:column value="{!p.id}"/>
+                                     <apex:column value="{!p.First_Name__c}"/>
+                                     <apex:column value="{!p.Last_Name__c}"/>
+                                     <apex:column value="{!p.Age_Calculated__c}"/>
+                                     <apex:column value="{!p.Gender__c}"/>
+                                     <apex:column value="{!p.Experience_Level__c}"/>
+                                     <apex:column value="{!p.PAN_Card__c}"/>
+                         </apex:pageBlockTable> 
+                         <apex:pageblockTable value="{!transList}" var="tr">
+                                     <apex:column value="{!tr.Name}"/>
+                         
+                         </apex:pageblockTable>
+             </apex:pageBlockSection> 
+     </apex:pageblock>
+   </apex:form> 
+</apex:page>

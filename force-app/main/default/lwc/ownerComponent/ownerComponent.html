@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Owner Component">
+        <c-container-component>
+            <c-calculator company-name="CTS" onsampleevent = {handleSampleEvent}></c-calculator>
+        </c-container-component>
+        <template if:true={eventParams}>
+            {eventParams.fname}     {eventParams.lname}
+        </template>
+        <lightning-button label="updateName" onclick={handleUpdateName}></lightning-button>
+    </lightning-card>
+</template>

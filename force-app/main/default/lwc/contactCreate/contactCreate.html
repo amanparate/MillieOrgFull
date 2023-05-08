@@ -1,0 +1,9 @@
+<template>
+    <lightning-card aria-label="Contact Form">
+        <lightning-input name="contactFName" label="Enter First Name" value={conFName} ></lightning-input>
+        <lightning-input name="contactMName" label="Enter Middle Name" value={conMName} ></lightning-input>
+        <lightning-input name="contactLName" label="Enter Last Name" value={conLName} ></lightning-input>
+
+        <lightning-button variant="brand" label="Create" onclick={createContactHandler}></lightning-button>
+    </lightning-card>
+</template>

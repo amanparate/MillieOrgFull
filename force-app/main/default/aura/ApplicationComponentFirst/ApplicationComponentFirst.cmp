@@ -1,0 +1,14 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="Slider" type="Integer" />
+    <aura:registerEvent name="MyCompoFirstEvent" type="c:ApplicationComponentEvent" />
+    
+    <lightning:card title="First Component">        
+        <p class="slds-p-horizontal_small">
+            <lightning:slider label="Value" value="{!v.Slider}" onchange ="{!c.FirstCompoHandler}" /> <br />
+            
+            &nbsp; &nbsp; Value :  {!v.Slider} <br /><br />
+        </p><br />	      
+    </lightning:card>
+    
+</aura:component>

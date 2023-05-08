@@ -1,0 +1,25 @@
+<aura:component controller = "contactRecordProvider" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+     
+     <aura:attribute name="contactName" type="String"/>
+     <lightning:input type="text" name="contactName" label="Enter Contact Name" value="{!v.contactName}"/> <br />
+     
+    <aura:attribute name="contactDept" type="String"/>
+    <lightning:input type="text" name="conDepartment" label="Department" value="{!v.conDepartment}"/> <br />
+     
+    <aura:attribute name="contactEmail" type="String"/>
+    <lightning:input type="text" name="conEmail" label="Email" value="{!v.conEmail}"/> <br />
+     
+    <aura:attribute name="contactAssist" type="String"/>
+    <lightning:input type="text" name="conAssistant" label="Assistant" value="{!v.conAssistant}"/> <br />
+     
+    <aura:attribute name="contactTitle" type="String"/>
+    <lightning:input type="text" name="conTitle" label="Title" value="{!v.conTitle}"/> <br />
+     
+    <aura:attribute name="contactMailSt" type="String"/>
+    <lightning:input type="text" name="conMailing Street" label="Mailing Street" value="{!v.conMailingStreet}"/> <br />
+     
+    <aura:attribute name="contactMailCity" type="String"/>
+    <lightning:input type="text" name="conMailing City" label="Mailing City" value="{!v.conMailingCity}"/> <br />
+     
+    <lightning:button variant="brand" label="Create New Contact" title="Contact"  onclick="{!c.myHandler}"/>
+</aura:component>

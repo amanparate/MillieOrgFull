@@ -1,0 +1,13 @@
+<aura:component controller="AccountProvider" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute name="objAccount" type="sObject" default="{'sObjectType':'Account'} " />
+	
+	
+	<lightning:input type="text" name="accountInfo" label="Enter Account Name" value="{!v.objAcount.Name}"  /> <br />	    
+    
+    <lightning:button variant="brand" label="Show Account Details" title="Account"  onclick="{!c.createAcountHandler}" /> <br />
+    
+    Account Name : {!v.objAccount.Name} <br/>
+    Account Type : {!v.objAccount.Type} <br/>
+    Account Industry : {!v.objAccount.Industry} <br/>
+    Account Annual Revenue : {!v.objAccount.AnnualRevenue} <br/>
+</aura:component>
