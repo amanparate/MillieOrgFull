@@ -1,4 +1,7 @@
-public with sharing class ContactController {
+ public with sharing class LwcPaginationWithRowValueController {
+    public LwcPaginationWithRowValueController() {
+
+    }
 
     // Fetch contacts for pagination
     @AuraEnabled(cacheable=true)
@@ -21,4 +24,5 @@ public with sharing class ContactController {
         @AuraEnabled
         public Integer totalRecords;
     }
+    
 }

@@ -4,9 +4,27 @@
                 <lightning-datatable
                  key-field="Id"
                  data={contact.data}
-                 columns={columns} onsave={handleSave} draft-values={draftValues}
-                >
+                 columns={columns} onsave={handleSave} draft-values={draftValues}>
                 </lightning-datatable>
+
+                <div class="slds-m-top_medium slds-grid slds-grid_align-center">
+                    <lightning-button 
+                        label="Previous"
+                        onclick={handlePrevious}
+                        disabled={isPreviousDisabled}>
+                    </lightning-button>
+                    
+                    <span class="slds-m-horizontal_medium">
+                        Page {currentPage} of {totalPages}
+                    </span>
+        
+                    <lightning-button 
+                        label="Next"
+                        onclick={handleNext}
+                        disabled={isNextDisabled}>
+                    </lightning-button>
+                </div>
+
         </template>
         <template if:true={contact.error}>
             <p>Error in rendering data table</p>

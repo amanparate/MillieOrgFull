@@ -1,4 +1,4 @@
-public with sharing class ContactController {
+public with sharing class ContactPaginationController {
 
     // Fetch contacts for pagination
     @AuraEnabled(cacheable=true)

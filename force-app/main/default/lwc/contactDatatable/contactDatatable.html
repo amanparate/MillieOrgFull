@@ -1,0 +1,31 @@
+<template>
+    
+    <lightning-card title="Contact List" icon-name="standard:contact">
+        <div class="slds-p-around_medium">
+            <!-- Loading Spinner -->
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+            </template>
+
+            <!-- Data Table -->
+            <template if:true={contacts}>
+                <c-contact-datatable
+                    contacts={contacts}
+                    total-records={totalRecords}
+                    page-number={pageNumber}
+                    page-size={pageSize}
+                    onprevious={handlePreviousPage}
+                    onnext={handleNextPage}>
+                </c-contact-datatable>
+            </template>
+
+            <!-- Error Message -->
+            <template if:true={error}>
+                <div class="slds-text-color_error slds-m-top_medium">
+                    <p>{error}</p>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+
+</template>
